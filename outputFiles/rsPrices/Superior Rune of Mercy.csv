@@ -1,0 +1,27 @@
+name,highest buy (gold),lowest sell (gold), id
+Tahlkora's Coat,0.8035,0.9096,111
+Carrion Sneakthief Coat of Mercy,1.5038,5.0094,139
+Tahlkora's Boots,0.8022,0.873,608
+Cleric's Sneakthief Shoulderguards of Mercy,0.7012,2.726,687
+Shaman's Sneakthief Gloves of Mercy,0.6206,1.4951,789
+Carrion Sneakthief Leggings of Mercy,0.4035,0.6195,1192
+Tahlkora's Gloves,0.8235,0.873,2055
+Tahlkora's Mask,0.8045,0.822,2397
+Tahlkora's Leggings,0.8043,0.8737,2549
+Cleric's Seer Pants of Mercy,0.7079,0.9084,2550
+Tahlkora's Mantle,0.8008,0.8485,2703
+Superior Rune of Mercy,0.0,0.0256,24708
+
+Lowest 5 buy orders
+Superior Rune of Mercy,0.0
+Carrion Sneakthief Leggings of Mercy,0.4035
+Shaman's Sneakthief Gloves of Mercy,0.6206
+Cleric's Sneakthief Shoulderguards of Mercy,0.7012
+Cleric's Seer Pants of Mercy,0.7079
+
+Lowest 5 sell offers
+Superior Rune of Mercy, ,0.0256
+Carrion Sneakthief Leggings of Mercy, ,0.6195
+Tahlkora's Mask, ,0.822
+Tahlkora's Mantle, ,0.8485
+Tahlkora's Boots, ,0.873

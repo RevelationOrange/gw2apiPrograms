@@ -1,0 +1,31 @@
+name,highest buy (gold),lowest sell (gold), id
+Carrion Seer Coat of Rage,1.4558,3.0535,85
+Shiro's Mask,0.5097,0.8394,93
+Cleric's Sneakthief Mask of Rage,1.1226,3.09,121
+Shiro's Coat,0.7037,0.9887,155
+Shiro's Greaves,0.6437,1.0039,274
+Rampager's Seer Boots of Rage,5.5008,10.2095,596
+Shiro's Pauldrons,0.5748,0.9998,659
+Shiro's Gloves,0.5702,0.9498,749
+Cleric's Scallywag Greaves of Rage,1.2527,2.6385,876
+Carrion Scallywag Chest of Rage,0.6441,0.8842,1031
+Shiro's Leggings,0.6686,1.0086,1193
+Rampager's Scallywag Pauldrons of Rage,1.2182,2.9699,2138
+Cleric's Scallywag Pauldrons of Rage,0.7051,1.8239,2148
+Berserker's Seer Mask of Rage,0.3998,0.6091,2403
+Superior Rune of Rage,0.324,0.4499,24717
+Dire Seer Coat of Rage,0.8366,2.2422,45071
+
+Lowest 5 buy orders
+Superior Rune of Rage,0.324
+Berserker's Seer Mask of Rage,0.3998
+Shiro's Mask,0.5097
+Shiro's Gloves,0.5702
+Shiro's Pauldrons,0.5748
+
+Lowest 5 sell offers
+Superior Rune of Rage, ,0.4499
+Berserker's Seer Mask of Rage, ,0.6091
+Shiro's Mask, ,0.8394
+Carrion Scallywag Chest of Rage, ,0.8842
+Shiro's Gloves, ,0.9498

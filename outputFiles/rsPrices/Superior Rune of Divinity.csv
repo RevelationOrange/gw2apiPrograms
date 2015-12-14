@@ -1,0 +1,30 @@
+name,highest buy (gold),lowest sell (gold), id
+Rampager's Seer Coat of Divinity,5.1242,9.9994,100
+Shaman's Seer Coat of Divinity,1.9635,3.9599,108
+Shaman's Sneakthief Shoulderguards of Divinity,1.0034,2.0034,679
+Shaman's Scallywag Chest of Divinity,0.967,2.674,1043
+Cleric's Scallywag Chest of Divinity,1.0558,3.1364,1049
+Berserker's Sneakthief Leggings of Divinity,2.9634,8.0,1183
+Berserker's Scallywag Helm of Divinity,0.6997,1.5,1635
+Rampager's Scallywag Legs of Divinity,0.9612,3.9533,1863
+Berserker's Seer Mask of Divinity,0.4019,0.5999,2386
+Carrion Seer Pants of Divinity,0.4543,0.6343,2542
+Carrion Seer Mantle of Divinity,0.4369,0.6868,2695
+Berserker's Seer Mantle of Divinity,0.4245,0.605,2709
+Superior Rune of Divinity,0.0773,0.15,24732
+Sentinel's Conjurer Chest of Divinity,10.0204,292.9999,41646
+Dire Scallywag Greaves of Divinity,0.6047,0.9884,45064
+
+Lowest 5 buy orders
+Superior Rune of Divinity,0.0773
+Berserker's Seer Mask of Divinity,0.4019
+Berserker's Seer Mantle of Divinity,0.4245
+Carrion Seer Mantle of Divinity,0.4369
+Carrion Seer Pants of Divinity,0.4543
+
+Lowest 5 sell offers
+Superior Rune of Divinity, ,0.15
+Berserker's Seer Mask of Divinity, ,0.5999
+Berserker's Seer Mantle of Divinity, ,0.605
+Carrion Seer Pants of Divinity, ,0.6343
+Carrion Seer Mantle of Divinity, ,0.6868

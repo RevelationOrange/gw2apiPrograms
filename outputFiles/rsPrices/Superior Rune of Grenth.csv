@@ -1,0 +1,30 @@
+name,highest buy (gold),lowest sell (gold), id
+Carrion Sneakthief Mask of Grenth,0.7054,1.5,86
+Berserker's Sneakthief Shoulderguards of Grenth,0.3541,0.5997,641
+Galrath's Greaves,0.8159,0.9429,896
+Galrath's Chestguard,0.7317,0.9997,1060
+Galrath's Gauntlets,0.8037,0.898,1369
+Galrath's Helm,0.8074,0.8774,1654
+Galrath's Legplates,0.8131,0.925,1881
+Galrath's Pauldrons,0.7115,0.8497,2159
+Berserker's Seer Mask of Grenth,2.0036,3.496,2384
+Carrion Seer Pants of Grenth,0.9535,2.2,2540
+Berserker's Seer Pants of Grenth,0.4014,0.7642,2555
+Carrion Seer Mantle of Grenth,1.3086,3.2988,2694
+Superior Rune of Grenth,0.0217,0.0255,24779
+Sentinel's Conjurer Pants of Grenth,15.072,0.0,41649
+Dire Scallywag Chest of Grenth,0.6611,0.9803,45065
+
+Lowest 5 buy orders
+Superior Rune of Grenth,0.0217
+Berserker's Sneakthief Shoulderguards of Grenth,0.3541
+Berserker's Seer Pants of Grenth,0.4014
+Dire Scallywag Chest of Grenth,0.6611
+Carrion Sneakthief Mask of Grenth,0.7054
+
+Lowest 5 sell offers
+Sentinel's Conjurer Pants of Grenth, ,0.0
+Superior Rune of Grenth, ,0.0255
+Berserker's Sneakthief Shoulderguards of Grenth, ,0.5997
+Berserker's Seer Pants of Grenth, ,0.7642
+Galrath's Pauldrons, ,0.8497

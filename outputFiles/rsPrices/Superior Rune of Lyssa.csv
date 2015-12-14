@@ -1,0 +1,28 @@
+name,highest buy (gold),lowest sell (gold), id
+Cleric's Sneakthief Shoulderguards of Lyssa,0.5513,1.3997,682
+Berserker's Sneakthief Gloves of Lyssa,0.3708,0.6098,705
+Rampager's Sneakthief Gloves of Lyssa,0.7016,2.4715,763
+Carrion Scallywag Greaves of Lyssa,0.8104,2.9999,820
+Carrion Scallywag Greaves of Lyssa,0.4213,0.5999,830
+Berserker's Seer Gloves of Lyssa,2.5044,5.4384,2019
+Shaman's Seer Gloves of Lyssa,0.4308,0.8914,2049
+Rampager's Scallywag Pauldrons of Lyssa,1.927,7.8599,2139
+Cleric's Seer Pants of Lyssa,0.5205,1.0105,2551
+Cleric's Seer Mantle of Lyssa,0.4549,1.1795,2704
+Superior Rune of Lyssa,0.0218,0.0255,24776
+Sentinel's Banded Coat of Lyssa,20.3406,0.0,41640
+Sentinel's Privateer Boots of Lyssa,12.2023,0.0,41651
+
+Lowest 5 buy orders
+Superior Rune of Lyssa,0.0218
+Berserker's Sneakthief Gloves of Lyssa,0.3708
+Carrion Scallywag Greaves of Lyssa,0.4213
+Shaman's Seer Gloves of Lyssa,0.4308
+Cleric's Seer Mantle of Lyssa,0.4549
+
+Lowest 5 sell offers
+Sentinel's Banded Coat of Lyssa, ,0.0
+Sentinel's Privateer Boots of Lyssa, ,0.0
+Superior Rune of Lyssa, ,0.0255
+Carrion Scallywag Greaves of Lyssa, ,0.5999
+Berserker's Sneakthief Gloves of Lyssa, ,0.6098

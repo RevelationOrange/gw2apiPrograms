@@ -1,0 +1,27 @@
+name,highest buy (gold),lowest sell (gold), id
+Khilbron's Coat,0.6945,0.8744,131
+Cleric's Seer Boots of the Lich,0.9097,2.3072,615
+Khilbron's Boots,0.6949,0.9075,629
+Carrion Sneakthief Gloves of the Lich,0.563,1.3053,728
+Berserker's Scallywag Chest of the Lich,0.3926,0.5998,1058
+Berserker's Scallywag Helm of the Lich,0.3431,0.6398,1653
+Khilbron's Gloves,0.6791,0.7189,2072
+Khilbron's Mask,0.6503,0.9794,2404
+Khilbron's Leggings,0.7514,0.8706,2556
+Khilbron's Mantle,0.6874,0.7356,2710
+Superior Rune of the Lich,0.0217,0.0255,24688
+Sentinel's Conjurer Mask of the Lich,11.05,0.0,41648
+
+Lowest 5 buy orders
+Superior Rune of the Lich,0.0217
+Berserker's Scallywag Helm of the Lich,0.3431
+Berserker's Scallywag Chest of the Lich,0.3926
+Carrion Sneakthief Gloves of the Lich,0.563
+Khilbron's Mask,0.6503
+
+Lowest 5 sell offers
+Sentinel's Conjurer Mask of the Lich, ,0.0
+Superior Rune of the Lich, ,0.0255
+Berserker's Scallywag Chest of the Lich, ,0.5998
+Berserker's Scallywag Helm of the Lich, ,0.6398
+Khilbron's Gloves, ,0.7189

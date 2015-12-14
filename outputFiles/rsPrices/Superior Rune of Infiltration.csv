@@ -1,0 +1,31 @@
+name,highest buy (gold),lowest sell (gold), id
+Nika's Mask,2.2107,2.7081,80
+Nika's Coat,4.0011,4.921,125
+Nika's Boots,4.0,5.2,208
+Carrion Seer Boots of Infiltration,0.3789,0.6794,584
+Nika's Pauldrons,3.7579,5.108,646
+Nika's Gloves,4.0075,5.1375,714
+Rampager's Scallywag Greaves of Infiltration,1.059,12.0377,846
+Cleric's Scallywag Chest of Infiltration,1.1636,5.8899,1051
+Nika's Leggings,3.771,5.7709,1188
+Cleric's Sneakthief Leggings of Infiltration,1.101,2.4575,1207
+Berserker's Sneakthief Leggings of Infiltration,0.3623,0.502,1218
+Rampager's Scallywag Gauntlets of Infiltration,1.0047,2.3502,1347
+Shaman's Seer Mask of Infiltration,0.4511,1.0,2395
+Berserker's Seer Mantle of Infiltration,1.6164,3.0123,2690
+Superior Rune of Infiltration,0.0255,0.0322,24703
+Dire Sneakthief Sandals of Infiltration,0.625,0.9887,45076
+
+Lowest 5 buy orders
+Superior Rune of Infiltration,0.0255
+Berserker's Sneakthief Leggings of Infiltration,0.3623
+Carrion Seer Boots of Infiltration,0.3789
+Shaman's Seer Mask of Infiltration,0.4511
+Dire Sneakthief Sandals of Infiltration,0.625
+
+Lowest 5 sell offers
+Superior Rune of Infiltration, ,0.0322
+Berserker's Sneakthief Leggings of Infiltration, ,0.502
+Carrion Seer Boots of Infiltration, ,0.6794
+Dire Sneakthief Sandals of Infiltration, ,0.9887
+Shaman's Seer Mask of Infiltration, ,1.0

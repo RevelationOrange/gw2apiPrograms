@@ -1,0 +1,36 @@
+name,highest buy (gold),lowest sell (gold), id
+Zho's Mask,0.6153,0.8521,123
+Zho's Coat,0.7938,1.0022,223
+Shaman's Sneakthief Sandals of the Flock,0.6522,2.9995,336
+Zho's Boots,0.661,1.0982,365
+Berserker's Seer Boots of the Flock,2.1024,3.7535,565
+Carrion Sneakthief Shoulderguards of the Flock,0.3696,0.7028,655
+Carrion Sneakthief Shoulderguards of the Flock,0.3699,0.5935,657
+Shaman's Sneakthief Shoulderguards of the Flock,0.4533,0.9998,676
+Zho's Pauldrons,0.601,1.001,691
+Zho's Gloves,0.6434,1.0998,811
+Zho's Leggings,0.8335,1.1178,1209
+Berserker's Scallywag Gauntlets of the Flock,0.6281,0.6283,1331
+Shaman's Scallywag Gauntlets of the Flock,0.4502,0.8902,1350
+Shaman's Scallywag Helm of the Flock,0.443,1.0021,1645
+Berserker's Scallywag Pauldrons of the Flock,0.5196,1.5499,2126
+Superior Rune of the Flock,0.0219,0.0255,24696
+Sentinel's Banded Gauntlets of the Flock,4.0252,0.0,41641
+Dire Scallywag Gauntlets of the Flock,0.6878,0.9499,45066
+Dire Scallywag Helm of the Flock,0.6328,0.9582,45067
+Dire Scallywag Legs of the Flock,0.661,0.8,45068
+Dire Sneakthief Shoulderguards of the Flock,0.6949,0.9467,45081
+
+Lowest 5 buy orders
+Superior Rune of the Flock,0.0219
+Carrion Sneakthief Shoulderguards of the Flock,0.3696
+Carrion Sneakthief Shoulderguards of the Flock,0.3699
+Shaman's Scallywag Helm of the Flock,0.443
+Shaman's Scallywag Gauntlets of the Flock,0.4502
+
+Lowest 5 sell offers
+Sentinel's Banded Gauntlets of the Flock, ,0.0
+Superior Rune of the Flock, ,0.0255
+Carrion Sneakthief Shoulderguards of the Flock, ,0.5935
+Berserker's Scallywag Gauntlets of the Flock, ,0.6283
+Carrion Sneakthief Shoulderguards of the Flock, ,0.7028

@@ -1,0 +1,37 @@
+name,highest buy (gold),lowest sell (gold), id
+Berserker's Sneakthief Mask of Strength,9.2503,10.5,75
+Ogden's Coat,9.0004,10.9999,94
+Ogden's Boots,8.5142,10.9999,587
+Rampager's Sneakthief Shoulderguards of Strength,11.5745,18.9499,669
+Cleric's Sneakthief Gloves of Strength,10.2219,13.25,806
+Devona's Greaves,10.0009,12.0,810
+Berserker's Scallywag Chest of Strength,16.01,23.0101,1020
+Devona's Chestguard,9.9039,11.9037,1026
+Carrion Scallywag Chest of Strength,9.0846,12.0,1032
+Devona's Gauntlets,9.206,11.9199,1333
+Devona's Helm,9.7562,11.9999,1637
+Devona's Legplates,9.8111,13.2992,1858
+Ogden's Gloves,8.4307,10.8507,2038
+Devona's Pauldrons,9.0215,13.0217,2128
+Shaman's Scallywag Pauldrons of Strength,11.1126,16.9292,2144
+Ogden's Mask,8.7751,11.6347,2391
+Rampager's Seer Mask of Strength,10.0222,29.9998,2392
+Ogden's Leggings,8.7255,11.3999,2543
+Ogden's Mantle,8.775,10.6009,2697
+Shaman's Seer Mantle of Strength,10.2016,15.0099,2701
+Superior Rune of Strength,10.1716,11.921,24714
+Sentinel's Banded Legs of Strength,15.6968,0.0,41643
+
+Lowest 5 buy orders
+Ogden's Gloves,8.4307
+Ogden's Boots,8.5142
+Ogden's Leggings,8.7255
+Ogden's Mantle,8.775
+Ogden's Mask,8.7751
+
+Lowest 5 sell offers
+Sentinel's Banded Legs of Strength, ,0.0
+Berserker's Sneakthief Mask of Strength, ,10.5
+Berserker's Sneakthief Mask of Strength, ,10.5
+Berserker's Sneakthief Mask of Strength, ,10.5
+Berserker's Sneakthief Mask of Strength, ,10.5

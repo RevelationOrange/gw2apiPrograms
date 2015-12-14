@@ -1,0 +1,31 @@
+name,highest buy (gold),lowest sell (gold), id
+Cleric's Seer Coat of the Eagle,0.6516,2.1883,113
+Carrion Scallywag Legs of the Eagle,0.6957,0.8996,1861
+Carrion Seer Gloves of the Eagle,0.7041,0.9289,2036
+Carrion Scallywag Pauldrons of the Eagle,0.7095,0.8563,2134
+Cleric's Seer Mask of the Eagle,0.6293,1.095,2398
+Berserker's Seer Mantle of the Eagle,0.7872,1.0895,2691
+Superior Rune of the Eagle,0.548,0.7776,24723
+Sentinel's Banded Greaves of the Eagle,22.1166,0.0,41639
+Sentinel's Conjurer Gloves of the Eagle,10.3127,0.0,41647
+Dire Seer Gloves of the Eagle,0.9929,1.5026,45072
+Errol's Boots,0.9539,1.4536,45148
+Errol's Coat,0.9018,1.3494,45149
+Errol's Gloves,0.7732,1.3001,45150
+Errol's Mask,0.8501,1.284,45151
+Errol's Leggings,0.9659,1.29,45152
+Errol's Pauldrons,0.8684,1.3256,45153
+
+Lowest 5 buy orders
+Superior Rune of the Eagle,0.548
+Cleric's Seer Mask of the Eagle,0.6293
+Cleric's Seer Coat of the Eagle,0.6516
+Cleric's Seer Coat of the Eagle,0.6516
+Cleric's Seer Coat of the Eagle,0.6516
+
+Lowest 5 sell offers
+Sentinel's Banded Greaves of the Eagle, ,0.0
+Sentinel's Conjurer Gloves of the Eagle, ,0.0
+Superior Rune of the Eagle, ,0.7776
+Carrion Scallywag Pauldrons of the Eagle, ,0.8563
+Carrion Scallywag Legs of the Eagle, ,0.8996

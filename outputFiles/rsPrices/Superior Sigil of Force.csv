@@ -1,0 +1,30 @@
+name,highest buy (gold),lowest sell (gold), id
+Superior Sigil of Force,7.2421,9.9898,24615
+Maw of the Damned,8.6146,12.0094,25971
+Berserker's Iron Mace of Force,6.9124,9.0542,25974
+Twin Sisters,7.0,9.4011,26234
+Big Juju,7.8529,9.0212,26408
+Imryldyeen,7.5104,9.0,27498
+The Briny Deep,7.073,8.88,27647
+Bow of the Pale Stag,7.2137,8.6999,27795
+Trident of the True Legion,7.5337,8.2099,28441
+Cleric's Iron Spear of Force,9.1041,13.8941,28581
+The Predator,2155.0,2710.0,30694
+Rusttooth,6.2127,9.0,31066
+Mystic Sword,11.2057,14.8056,31095
+Anton's Boot Blade,22.8576,31.848,44978
+Black Fleet Bludgeon,8.8847,10.0785,47086
+
+Lowest 5 buy orders
+Rusttooth,6.2127
+Berserker's Iron Mace of Force,6.9124
+Twin Sisters,7.0
+The Briny Deep,7.073
+Bow of the Pale Stag,7.2137
+
+Lowest 5 sell offers
+Trident of the True Legion, ,8.2099
+Bow of the Pale Stag, ,8.6999
+The Briny Deep, ,8.88
+Imryldyeen, ,9.0
+Rusttooth, ,9.0

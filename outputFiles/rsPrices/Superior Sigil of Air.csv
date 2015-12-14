@@ -1,0 +1,36 @@
+name,highest buy (gold),lowest sell (gold), id
+Superior Sigil of Air,6.482,7.8892,24554
+Rampager's Iron Mace of Air,4.5278,7.8999,25977
+Moonshine,5.5137,6.9392,25992
+Cleric's Iron Sword of Air,6.5282,42.0,26230
+Rampager's Iron Sword of Air,9.0409,11.99,26235
+Cleric's Soft Wood Scepter of Air,6.6442,12.955,26386
+Berserker's Iron Pistol of Air,5.9706,7.1,26692
+Cleric's Soft Wood Warhorn of Air,5.7153,8.7906,26855
+Rampager's Soft Wood Focus of Air,6.0981,9.15,27018
+Berserker's Soft Wood Torch of Air,3.831,7.2901,27162
+Cleric's Soft Wood Torch of Air,6.1921,9.9998,27169
+Khrysaor, the Golden Sword,5.5085,6.408,27336
+Berserker's Iron Hammer of Air,6.1537,11.0,27628
+Peasant's Solution,5.2526,6.2526,28430
+Berserker's Iron Spear of Air,5.5153,8.0062,28573
+Meteorlogicus,2400.0506,2550.0,30695
+Bolt,2863.0,3368.0,30699
+Feathers of Dwayna,267.6273,420.9997,31073
+Super Hyperbeam Alpha,5.6009,6.3018,47082
+Bite of the Ebon Viper,5.6753,6.5989,47088
+Crystalline Blade,5.6688,7.0868,47096
+
+Lowest 5 buy orders
+Berserker's Soft Wood Torch of Air,3.831
+Rampager's Iron Mace of Air,4.5278
+Peasant's Solution,5.2526
+Khrysaor, the Golden Sword,5.5085
+Moonshine,5.5137
+
+Lowest 5 sell offers
+Peasant's Solution, ,6.2526
+Super Hyperbeam Alpha, ,6.3018
+Khrysaor, the Golden Sword, ,6.408
+Bite of the Ebon Viper, ,6.5989
+Moonshine, ,6.9392

@@ -2,6 +2,7 @@ from urllib2 import urlopen
 import json
 import gw2lib
 import time
+import sys
 
 
 timeStart = time.time()
@@ -9,6 +10,10 @@ timeStart = time.time()
 masterItemList = []
 incr = 200
 update = True
+
+if len(sys.argv) > 1:
+    if sys.argv[1] == '--new' or sys.argv[1] == 'new' or sys.argv[1] == '-n':
+        update = False
 
 url = gw2lib.apiBase + gw2lib.itemsSubsect
 itemIDlist = json.load(urlopen(url))

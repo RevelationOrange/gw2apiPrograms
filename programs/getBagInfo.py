@@ -33,7 +33,7 @@ for x in bagLines:
             bagsLeft += 1
     bagLinesMarks.append(line)
 
-with open(gw2lib.charactersFolderName+'bags.csv', 'wb') as bagsFile:
+with open(gw2lib.charactersFolderName+'bagsOnAllCharacters.csv', 'wb') as bagsFile:
     bagsWriter = csv.writer(bagsFile)
     bagsWriter.writerow(headerLine)
     print headerLine

@@ -16,7 +16,7 @@ def findPartialStacks(bag, locationsDict, curChar, mil):
                         else:
                             locationsDict[item['id']] = {'locations': [[item['count'], curChar]], 'name': itemData['name']}
 
-stacksFilename = 'stacks.txt'
+stacksFilename = 'combinableStacks.txt'
 
 apiKey = sys.argv[1]
 

@@ -125,10 +125,13 @@ def getContainerLists(masterItemList,rsID):
 def findByID(id,list):
     '''
     find an item object by its id
-    simply loops through the given list (usually the master item list) and returns the object when the id is found
+    simply loops through the given list (usually the master item list) and returns the object when its id is found.
     notably, some items exist in game and will return ids in the characters or account/bank endpoints that do not
     exist in the items endpoint
     why. why anet, why.
+    no checking for such cases is provided, usually causing an error when the return value of [] is used in the
+    program calling findByID, which is intentional; this kind of error should never occur in the first place, so it's
+    best to know when it happens so more information about the item in question can be obtained
     '''
     for x in list:
         if x['id'] == id:

@@ -1,5 +1,6 @@
 import json
 from urllib2 import urlopen
+import os
 
 '''
 This file contains various functions useful across many (well, at least more than one [usually]) gw2 api programs:
@@ -18,13 +19,13 @@ authPref = 'access_token='
 authSuff = '&'
 
 # folder and file strings
-# these are obviously OS dependent; at some point I might try to figure out how to make this work for any OS
-baseFolder = '../'
-databaseFolder = 'dbFiles/'
-outputFolder = 'outputFiles/'
-itemListFolder = baseFolder + databaseFolder + 'itemLists/'
-searchFolderName = baseFolder + databaseFolder + 'sigilrune_files/'
-rsPricesFolderName = baseFolder + outputFolder + 'rsPrices/'
+sep = os.sep
+baseFolder = '..' + sep
+databaseFolder = 'dbFiles' + sep
+outputFolder = 'outputFiles' + sep
+itemListFolder = baseFolder + databaseFolder + 'itemLists' + sep
+searchFolderName = baseFolder + databaseFolder + 'sigilrune_files' + sep
+rsPricesFolderName = baseFolder + outputFolder + 'rsPrices' + sep
 charactersFolderName = baseFolder + outputFolder
 masterItemFilename = 'masterItemList.json'
 newItemsFilename = 'newItems.txt'

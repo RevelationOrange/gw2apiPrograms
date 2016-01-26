@@ -3,6 +3,7 @@ import json
 import gw2lib
 import time
 import sys
+import codecs
 
 
 '''
@@ -79,7 +80,7 @@ if update:
         # is saved over the old one.
         with open(gw2lib.itemListFolder+gw2lib.newItemsFilename, 'a') as newItemsFile:
             newItemsFile.write( ','.join(str(x) for x in newIDs) + '\t' + time.strftime("%c") + '\n' )
-        with open(gw2lib.itemListFolder+gw2lib.newNamesFilename, 'a') as newNamesFile:
+        with codecs.open(gw2lib.itemListFolder+gw2lib.newNamesFilename, 'a', 'utf-8') as newNamesFile:
             newNamesFile.write( ','.join( x['name'] for x in newItemList ) + '\t' + time.strftime("%c") + '\n' )
         with open(gw2lib.itemListFolder+gw2lib.masterItemFilename, 'w') as masterItemFile:
             json.dump(masterItemList, masterItemFile)

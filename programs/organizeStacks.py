@@ -2,6 +2,11 @@ import gw2lib
 import sys
 import copy
 
+'''
+organizeStacks checks all inventories for combinable stacks of items
+that is, it reports when more than one of a stack of an item is found that is not at max
+it reports its location and amount
+'''
 
 def findPartialStacks(bag, locationsDict, curChar, mil):
     # checks a whole bag object or bank for every item (by id) that can stack and isn't a full stack, modifies a dict

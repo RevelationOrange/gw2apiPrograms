@@ -3,6 +3,10 @@ import sys
 from copy import deepcopy
 import codecs
 
+'''
+equipmentCheckup looks through current equips and inventory and shows you items in your inventory that would upgrade
+equipped items
+'''
 
 def isArmor(type):
     # for boolean tests; returns true if the equip type is armor that comes in different weight classes, else false

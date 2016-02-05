@@ -2,6 +2,7 @@ import json
 from urllib2 import urlopen
 import os
 
+
 '''
 This file contains various functions useful across many (well, at least more than one [usually]) gw2 api programs:
 getMIL, getAllCharacterData, getBankData, makeReqUrlList, compareByID, rarityComp, getRuneSigilObjs, getContainerLists,
@@ -14,6 +15,10 @@ itemsSubsect = "items?"
 charactersSubsect = "characters?"
 commercePricesSubsect = "commerce/prices?"
 accountBankSubsect = "account/bank?"
+recipesSubsect = "recipes?"
+recipeSearch = "recipes/search?"
+searchByInput = "input="
+searchByOutput = "output="
 idsReq = "ids="
 authPref = 'access_token='
 authSuff = '&'
@@ -24,10 +29,12 @@ baseFolder = '..' + sep
 databaseFolder = 'dbFiles' + sep
 outputFolder = 'outputFiles' + sep
 itemListFolder = baseFolder + databaseFolder + 'itemLists' + sep
+recipeListFolder = baseFolder + databaseFolder + 'recipeLists' + sep
 searchFolderName = baseFolder + databaseFolder + 'sigilrune_files' + sep
 rsPricesFolderName = baseFolder + outputFolder + 'rsPrices' + sep
 charactersFolderName = baseFolder + outputFolder
 masterItemFilename = 'masterItemList.json'
+masterRecipeFilename = 'masterRecipeList.json'
 newItemsFilename = 'newItems.txt'
 newNamesFilename = 'newNames.txt'
 runeAndSigilsFilename = 'runesAndSigils.json'
@@ -40,6 +47,18 @@ def getMIL():
     with open(itemListFolder+masterItemFilename) as masterItemFile:
         theList = json.load(masterItemFile)
     return theList
+
+def getMRL():
+    # function to easily get the master recipe list json
+    # just like getMIL()
+    with open(recipeListFolder+masterRecipeFilename) as masterRecipeFile:
+        theList = json.load(masterRecipeFile)
+    return theList
+
+def getRecipe(itemID, searchBy=searchByOutput):
+    url = apiBase + recipeSearch + searchBy + str(itemID)
+    recipeIDs = json.load(urlopen(url))
+    return recipeIDs
 
 def getAllCharacterData(auth):
     # gets all character names for the given api key, then gets all character data and returns it (as a json)
@@ -61,16 +80,16 @@ def getBankData(auth):
     bank = json.load(urlopen(url))
     return bank
 
-def makeReqUrlList(idsList,url=apiBase+itemsSubsect+idsReq):
+def makeReqUrlList(idsList,url=apiBase+itemsSubsect+idsReq, incr=200):
     # creates a list of ready to use url requests, and filename ranges to go with them (may be unnecessary)
     # originally intended for item id requests, but can be used for other requests
     # each item in the list is a full url for the api
     reqList = []
     filenameRanges = []
     # for loop goes from 0 to the total number of ids, in increments of 200
-    for index in range(0, len(idsList), 200):
+    for index in range(0, len(idsList), incr):
         # join on commas: each item (as a string) in the id list, from the current index to current+200
-        textIDs = ','.join(str(x) for x in idsList[index:index+200])
+        textIDs = ','.join(str(x) for x in idsList[index:index+incr])
         # add to the list of request urls: the given url (or default) with the id string (that was just created) appended
         reqList.append(url + textIDs)
         '''
@@ -79,7 +98,7 @@ def makeReqUrlList(idsList,url=apiBase+itemsSubsect+idsReq):
         however, seeing as the code doesn't actually check for that, and since the total run time is only around 12
         minutes anyway, this part hardly seems useful, but eh
         '''
-        filenameRanges.append([index, index+200])
+        filenameRanges.append([index, index+incr])
     return [reqList, filenameRanges]
 
 def compareByID(x, y):
@@ -137,6 +156,8 @@ def findByID(id,list):
     for x in list:
         if x['id'] == id:
             return x
+    else:
+        return None
 
 def findByX(val,criteria,dict):
     # find all item objects by any criteria

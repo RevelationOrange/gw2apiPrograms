@@ -3,6 +3,7 @@ import sys
 from copy import deepcopy
 import codecs
 
+
 '''
 equipmentCheckup looks through current equips and inventory and shows you items in your inventory that would upgrade
 equipped items

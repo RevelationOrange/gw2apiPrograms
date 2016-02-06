@@ -2,6 +2,9 @@ import gw2lib
 import sys
 import string
 
+'''
+invySearch provides a quick way to find items across all characters + bank
+'''
 
 # grab the api key from the command line
 apiKey = sys.argv[1]
@@ -13,15 +16,19 @@ masterItemList = gw2lib.getMIL()
 
 findList = []
 
+# open finditems.txt and read it into findList, or just set the list to the item(s) you want after this part, if it's
+# only a few you want to check
 with open("finditems.txt", 'r') as listFile:
     for line in listFile:
         findList.append(line[:-1])
 
-print findList
+#print findList
 foundList = []
 
 allInvys = []
 
+# loop through every inventory and just add every item that exists (plus location) to a master list
+# this avoids needing a function to call for every bag on every character
 for char in chars:
     for bag in char['bags']:
         if bag is not None:
@@ -30,6 +37,7 @@ for char in chars:
 
 allInvys.append(['bank', bank])
 
+# go through every item and if the name matches, add it to foundList
 for bag in allInvys:
     for item in bag[1]:
         if item is not None:
@@ -37,5 +45,6 @@ for bag in allInvys:
             if string.lower(iName) in [string.lower(x) for x in findList]:
                 foundList.append([bag[0], iName])
 
+# print what you found
 for x in foundList:
     print x[1] + " - found on " + x[0]

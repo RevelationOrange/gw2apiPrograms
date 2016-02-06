@@ -7,6 +7,7 @@ import os
 This file contains various functions useful across many (well, at least more than one [usually]) gw2 api programs:
 getMIL, getAllCharacterData, getBankData, makeReqUrlList, compareByID, rarityComp, getRuneSigilObjs, getContainerLists,
 findByID, findByX, formatCoins
+and more!
 '''
 
 # url strings, pretty self explanatory (I think?)

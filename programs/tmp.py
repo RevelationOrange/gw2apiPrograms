@@ -22,5 +22,5 @@ print 'path sep:', os.sep
 
 masterRecipeList = gw2lib.getMRL()
 
-recipeObj = gw2lib.findByID(18, masterRecipeList)
+recipeObj = gw2lib.findByID(11790, masterRecipeList)
 print recipeObj

@@ -32,7 +32,7 @@ if len(sys.argv) > 1:
 url = gw2lib.apiBase + gw2lib.itemsSubsect
 itemIDlist = json.load(urlopen(url))
 
-# the last ID isn't really important, just nice to know. lastListIndex is needed to build the list of url requests.
+# the last ID isn't really important, just nice to know. lastListIndex is needed to build the list of url requests
 lastListIndex = len(itemIDlist)
 lastItemID = itemIDlist[-1]
 print 'final item ID:', lastItemID, ', final list index:', lastListIndex

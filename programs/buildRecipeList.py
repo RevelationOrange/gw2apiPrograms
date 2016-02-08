@@ -1,6 +1,6 @@
 from urllib2 import urlopen
 import gw2lib
-import codecs
+#import codecs
 import json
 import time
 

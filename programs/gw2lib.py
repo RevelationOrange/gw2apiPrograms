@@ -107,17 +107,17 @@ def makeReqUrlList(idsList,url=apiBase+itemsSubsect+idsReq, incr=200):
     # each item in the list is a full url for the api
     reqList = []
     filenameRanges = []
-    # for loop goes from 0 to the total number of ids, in increments of 200
+    # for loop goes from 0 to the total number of ids, in increments of incr
     for index in range(0, len(idsList), incr):
-        # join on commas: each item (as a string) in the id list, from the current index to current+200
+        # join on commas: each item (as a string) in the id list, from the current index to current+incr
         textIDs = ','.join(str(x) for x in idsList[index:index+incr])
         # add to the list of request urls: the given url (or default) with the id string (that was just created) appended
         reqList.append(url + textIDs)
         '''
-        filename ranges is just intended for the first run of buildItemListV2, when it stores the json data for each
-        call of 200 ids in a file, so it can pick up where it left off in case there's a connection error
+        filename ranges is just intended for the first run of buildItemList, when it stores the json data for each
+        call of incr ids in a file, so it can pick up where it left off in case there's a connection error.
         however, seeing as the code doesn't actually check for that, and since the total run time is only around 12
-        minutes anyway, this part hardly seems useful, but eh
+        minutes anyway, this part hardly seems useful. but eh, it's there.
         '''
         filenameRanges.append([index, index+incr])
     return [reqList, filenameRanges]
@@ -137,24 +137,25 @@ def getRuneSigilObjs(masterItemList):
     # intended for use when finding rune and sigil prices on trade
     # I mean, I guess if you wanted all the runes and sigils from a reduced list, this would work too
     rsObjs = []
-    for x in masterItemList:
-        if 'AccountBound' in x['flags']:
+    for item in masterItemList.values():
+        if 'AccountBound' in item['flags']:
             # anything account bound won't be on trade anyway
             continue
         # if the object has a 'details' key, a 'type' key in the details dict, the rarity is exotic, and the type is
         # sigil or rune, then add it to the list of rune/sigil objects, to be returned
-        if 'details' in x.keys():
-            if 'type' in x['details'].keys():
-                if (x['details']['type'] == 'Sigil' or x['details']['type'] == 'Rune') and x['rarity'] == 'Exotic':
-                    if len(x['name']) > 1:
-                        rsObjs.append(x)
+        if 'details' in item.keys():
+            if 'type' in item['details'].keys():
+                if (item['details']['type'] == 'Sigil' or item['details']['type'] == 'Rune') and item['rarity'] == 'Exotic':
+                    # apparently you have to make sure the item has an actual name? alrighty then
+                    if len(item['name']) > 1:
+                        rsObjs.append(item)
     return rsObjs
 
 def getContainerLists(masterItemList,rsID):
     # get a list of all item objects that have x rune/sigil in them
     # NOTE: may have to also look at 'secondary_suffix_item_id'
     rsItemList = []
-    for x in masterItemList:
+    for x in masterItemList.values():
         # if the object has a 'details' key, a 'suffix_item_id' in the details dict, and that suffix_item_id matches
         # the given id of the rune/sigil (rsID), then add it to the list of item objects, to be returned
         if 'details' in x.keys():
@@ -257,6 +258,8 @@ def makeMRLv2():
         json.dump(MRLv2, masterRecipeFilev2)
 
 def addTPflag():
+    # addTPflag simply adds a 'TPable' key to every item object in the master item list v2
+    # it's false by default, so that only ids found on the TP get changed to true
     masterItemListv2 = getMILv2()
     for itemObj in masterItemListv2.values():
         itemObj['TPable'] = False
@@ -264,22 +267,34 @@ def addTPflag():
         json.dump(masterItemListv2, masterItemFile)
 
 def updateTPflag():
+    # updateTPflag goes through each item id and sets TPable to true if it gets a response from the TP endpoint
+
+    # one known id is needed to ensure the tp request is valid and doesn't crash the program
     knownID = 19684
+    # it needs to be a string for the url and accessing the dictionary
     knownIDstr = str(knownID)
+    # make the url using the known id, append a comma so you can just join() on the rest of the ids
     baseReqUrl = apiBase + commercePricesSubsect + idsReq + knownIDstr + ','
+    # get the v2 master list and set the known id's TPable to true
     masterItemListv2 = getMILv2()
     masterItemListv2[knownIDstr]['TPable'] = True
+    # get all the item ids from the dict
     allIDs = masterItemListv2.keys()
+    # make the url requests, with an increment of 199 because of known id
     urlReqList = makeReqUrlList(allIDs, baseReqUrl, 199)[0]
-    idsCheck = []
+    # for each request url:
     for req in urlReqList:
+        # get the response from the TP endpoint
         trades = json.load(urlopen(req))
+        # get all the ids from that response
         ids = [ x['id'] for x in trades ]
-        idsCheck.append(ids)
+        # and for each one, if it's not knownID, since we already dealt with that:
         for id in ids:
             if id != knownID:
+                # set the TPable flag to true for those ids
                 masterItemListv2[str(id)]['TPable'] = True
         print 'updated ' + str(len(ids)) + ' ids'
+    # and save the master list to file
     with open(itemListFolder+masterItemFilenamev2, 'w') as masterItemFile:
         json.dump(masterItemListv2, masterItemFile)
 
@@ -293,14 +308,14 @@ def updateMasterList(whichList):
         masterList = getMILv2()
         url = apiBase + itemsSubsect
         folder = itemListFolder
-        newObjsFilename = newItemsFilename
+        newIDsFilename = newItemsFilename
         newNamesFilename = newINamesFilename
         masterFilename = masterItemFilenamev2
     elif whichList == 'recipe':
         masterList = getMRLv2()
         url = apiBase + recipesSubsect
         folder = recipeListFolder
-        newObjsFilename = newRecipesFilename
+        newIDsFilename = newRecipesFilename
         newNamesFilename = newRNamesFilename
         masterFilename = masterRecipeFilenamev2
     # if whichList isn't item or recipe, something is wrong, don't do that
@@ -336,7 +351,7 @@ def updateMasterList(whichList):
             masterList[item['id']] = item
         # write to separate files: the new object ids, timestamped, the new names, timestamped, and the new master file
         # the ids and names are .txt files, the master file is a .json
-        with open(folder+newObjsFilename, 'a') as newObjsFile:
+        with open(folder+newIDsFilename, 'a') as newObjsFile:
             newObjsFile.write( ','.join(str(x) for x in newIDs ) + '\t' + time.strftime("%c") + '\n' )
         with codecs.open(folder+newNamesFilename, 'a', 'utf-8') as newNamesFile:
             newNamesFile.write( ','.join( x['name'] for x in newItemList ) + '\t' + time.strftime("%c") + '\n' )

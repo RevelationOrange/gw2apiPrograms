@@ -13,7 +13,8 @@ startTime = time.time()
 
 # here I just wanted to time how long it takes to load the master item list; not necessary, obvs
 mifStart = time.time()
-masterItemList = gw2lib.getMIL()
+# get the master item list v2
+masterItemList = gw2lib.getMILv2()
 mifEnd = time.time()
 print 'mif make time:', mifEnd-mifStart, 'seconds'
 

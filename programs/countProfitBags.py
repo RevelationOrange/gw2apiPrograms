@@ -28,7 +28,12 @@ def sumUpItems(bagObj, cIDs, bbr, bpls, nPB):
                         bpls[id[2]] = [id[1], item['count']]
     return nPB
 
-# gets the api key to use from the command line arguments
+# gets the api key to use from the command line arguments, or exit if one isn't provided
+if len(sys.argv) < 2:
+    print "No api key provided. Please provide your api key as the first argument. If you need to create one, you can "\
+          "do so at https://account.arena.net/applications"
+    print "Be sure to include the 'character' and 'inventories' permissions for this program to work."
+    sys.exit()
 apiKey = sys.argv[1]
 # grabs all the character data and bank info
 chars = gw2lib.getAllCharacterData(apiKey)

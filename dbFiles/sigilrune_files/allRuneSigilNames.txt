@@ -1,136 +1,136 @@
+Superior Rune of the Tempest
+Superior Sigil of Speed
+Superior Sigil of Corruption
+Superior Sigil of Bloodlust
+Superior Sigil of Nullification
+Superior Sigil of Purity
+Superior Sigil of Blood
+Superior Rune of Grenth
+Superior Rune of the Revenant
+Superior Rune of the Krait
+Superior Sigil of Icebrood Slaying
+Superior Sigil of Mischief
+Superior Rune of Snowfall
+Superior Rune of the Undead
+Superior Rune of the Ogre
+Superior Rune of the Ice
+Superior Rune of the Air
+Superior Rune of Balthazar
+Superior Sigil of Bursting
+Superior Sigil of Renewal
+Superior Rune of the Ranger
+Superior Rune of the Engineer
+Superior Rune of the Thief
+Superior Sigil of Generosity
+Superior Rune of Scavenging
+Superior Sigil of Restoration
+Superior Sigil of Hydromancy
+Superior Sigil of Luck
+Superior Sigil of Stamina
+Superior Sigil of Leeching
+Superior Sigil of Peril
+Superior Sigil of Hobbling
+Superior Sigil of Smoldering
+Superior Rune of the Herald
+Superior Rune of Mercy
+Superior Rune of the Pack
+Superior Rune of Infiltration
+Superior Rune of the Daredevil
+Superior Rune of the Guardian
+Superior Rune of the Trooper
+Superior Rune of the Warrior
+Superior Rune of the Privateer
+Superior Rune of the Centaur
+Superior Rune of Lyssa
+Superior Sigil of Torment
+Superior Rune of the Berserker
+Superior Sigil of Mad Scientists
+Superior Sigil of Smothering
+Superior Sigil of Justice
+Superior Rune of the Grove
+Superior Rune of Divinity
 Superior Sigil of Fire
-Superior Sigil of Water
-Superior Sigil of Air
-Superior Sigil of Ice
+Superior Rune of the Mad King
+Superior Sigil of Grawl Slaying
+Superior Sigil of Undead Slaying
+Superior Rune of the Chronomancer
+Superior Sigil of Agility
+Superior Rune of Dwayna
+Superior Rune of Perplexity
+Superior Rune of Tormenting
+Superior Rune of Exuberance
+Superior Sigil of Malice
+Superior Sigil of Ghost Slaying
+Superior Rune of the Mesmer
+Superior Rune of the Elementalist
+Superior Rune of the Necromancer
+Superior Sigil of Serpent Slaying
+Superior Sigil of Destroyer Slaying
+Superior Sigil of Ogre Slaying
+Superior Sigil of Force
+Superior Sigil of Agony
+Superior Sigil of Accuracy
+Superior Rune of the Druid
+Superior Rune of the Dolyak
+Superior Rune of the Flock
+Superior Rune of Vampirism
+Superior Rune of Rage
+Superior Rune of Strength
+Superior Rune of Melandru
 Superior Sigil of Earth
 Superior Sigil of Rage
 Superior Sigil of Strength
 Superior Sigil of Frailty
-Superior Sigil of Blood
-Superior Sigil of Purity
-Superior Sigil of Nullification
-Superior Sigil of Bloodlust
-Superior Sigil of Corruption
-Superior Sigil of Perception
-Superior Sigil of Life
-Superior Sigil of Demon Summoning
-Superior Sigil of Benevolence
-Superior Sigil of Speed
-Superior Sigil of Luck
-Superior Sigil of Stamina
-Superior Sigil of Restoration
-Superior Sigil of Hydromancy
-Superior Sigil of Leeching
-Superior Sigil of Intelligence
-Superior Sigil of Battle
-Superior Sigil of Geomancy
-Superior Sigil of Energy
-Superior Sigil of Doom
-Superior Sigil of Agony
-Superior Sigil of Force
-Superior Sigil of Accuracy
-Superior Sigil of Peril
-Superior Sigil of Smoldering
-Superior Sigil of Hobbling
-Superior Sigil of Chilling
-Superior Sigil of Venom
-Superior Sigil of Debility
-Superior Sigil of Paralyzation
-Superior Sigil of Undead Slaying
-Superior Sigil of Centaur Slaying
-Superior Sigil of Grawl Slaying
-Superior Sigil of Icebrood Slaying
-Superior Sigil of Destroyer Slaying
-Superior Sigil of Ogre Slaying
-Superior Sigil of Serpent Slaying
-Superior Sigil of Elemental Slaying
-Superior Sigil of Demon Slaying
-Superior Sigil of Wrath
-Superior Sigil of Mad Scientists
-Superior Sigil of Smothering
-Superior Sigil of Justice
-Superior Sigil of Dreams
-Superior Sigil of Sorrow
-Superior Rune of the Afflicted
-Superior Rune of the Lich
+Superior Rune of the Wurm
+Superior Rune of the Flame Legion
 Superior Rune of the Traveler
-Superior Rune of the Flock
-Superior Rune of the Dolyak
-Superior Rune of the Pack
-Superior Rune of Infiltration
-Superior Rune of Mercy
-Superior Rune of Vampirism
-Superior Rune of Strength
-Superior Rune of Rage
-Superior Rune of Speed
-Superior Rune of the Eagle
-Superior Rune of the Rata Sum
-Superior Rune of Hoelbrak
-Superior Rune of Divinity
-Superior Rune of the Grove
-Superior Rune of Scavenging
+Superior Sigil of Karka Slaying
+Superior Rune of the Scrapper
+Superior Sigil of Concentration
+Superior Rune of Resistance
+Superior Sigil of Wrath
+Superior Sigil of Demon Slaying
+Superior Sigil of Elemental Slaying
+Superior Rune of the Sunless
+Superior Sigil of Water
+Superior Sigil of Ice
+Superior Sigil of Air
 Superior Rune of the Citadel
 Superior Rune of the Earth
 Superior Rune of the Fire
-Superior Rune of the Air
-Superior Rune of the Ice
-Superior Rune of the Ogre
-Superior Rune of the Undead
-Superior Rune of the Krait
-Superior Rune of Balthazar
-Superior Rune of Dwayna
-Superior Rune of Melandru
-Superior Rune of Lyssa
-Superior Rune of Grenth
-Superior Rune of the Privateer
-Superior Rune of the Centaur
-Superior Rune of the Wurm
-Superior Rune of Svanir
-Superior Rune of the Flame Legion
-Superior Rune of the Elementalist
-Superior Rune of the Mesmer
-Superior Rune of the Necromancer
-Superior Sigil of Ghost Slaying
-Superior Rune of the Engineer
-Superior Rune of the Ranger
-Superior Rune of the Thief
-Superior Rune of the Warrior
-Superior Rune of the Guardian
-Superior Rune of the Trooper
-Superior Rune of the Adventurer
-Superior Rune of the Brawler
-Superior Rune of the Scholar
-Superior Rune of the Water
+Superior Sigil of Centaur Slaying
+Superior Rune of Altruism
 Superior Sigil of Celerity
 Superior Sigil of Impact
-Superior Rune of the Mad King
-Superior Sigil of the Night
-Superior Sigil of Karka Slaying
-Superior Rune of Altruism
-Superior Sigil of Generosity
-Superior Sigil of Bursting
-Superior Sigil of Renewal
-Superior Sigil of Malice
-Superior Rune of Exuberance
-Superior Rune of Tormenting
-Superior Rune of Perplexity
-Superior Rune of the Sunless
-Superior Rune of Antitoxin
-Superior Sigil of Torment
-Superior Sigil of Momentum
-Superior Rune of Resistance
-Superior Sigil of Mischief
-Superior Rune of Snowfall
-Superior Rune of the Revenant
-Superior Rune of the Druid
-Superior Rune of the Reaper
-Superior Rune of the Scrapper
-Superior Rune of the Berserker
-Superior Sigil of Agility
-Superior Sigil of Concentration
-Superior Rune of the Daredevil
-Superior Rune of the Chronomancer
 Superior Sigil of Transference
+Superior Sigil of the Night
+Superior Sigil of Momentum
+Superior Sigil of Benevolence
+Superior Sigil of Life
+Superior Sigil of Demon Summoning
+Superior Sigil of Perception
+Superior Sigil of Paralyzation
+Superior Sigil of Debility
+Superior Sigil of Chilling
+Superior Sigil of Venom
+Superior Rune of the Reaper
+Superior Rune of the Water
+Superior Rune of the Scholar
+Superior Rune of the Brawler
+Superior Rune of the Adventurer
+Superior Sigil of Geomancy
+Superior Sigil of Energy
+Superior Sigil of Battle
+Superior Sigil of Intelligence
+Superior Sigil of Doom
+Superior Rune of Svanir
+Superior Rune of Antitoxin
+Superior Rune of the Lich
+Superior Sigil of Sorrow
+Superior Rune of the Afflicted
+Superior Sigil of Dreams
 Superior Rune of the Dragonhunter
-Superior Rune of the Herald
-Superior Rune of the Tempest
+Superior Rune of the Rata Sum
+Superior Rune of the Eagle
+Superior Rune of Speed
+Superior Rune of Hoelbrak

@@ -66,7 +66,12 @@ def printRecTrail(ingrs, nTabs=1):
         if ingr['ingredients'] is not None:
             printRecTrail(ingr['ingredients'], nTabs+1)
 
-# grab the api key from the command line
+# grab the api key from the command line, or exit if one isn't provided
+if len(sys.argv) < 2:
+    print "No api key provided. Please provide your api key as the first argument. If you need to create one, you can "\
+          "do so at https://account.arena.net/applications"
+    print "Be sure to include the 'character' and 'inventories' permissions for this program to work."
+    sys.exit()
 apiKey = sys.argv[1]
 
 # grab character and bank data, and get the MIL and MRL

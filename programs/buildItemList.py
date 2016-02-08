@@ -7,7 +7,7 @@ import codecs
 
 
 '''
-buildItemListV2 is used to create the file masterItemList.json, which contains the json objects for every item id
+buildItemList is used to create/update the file masterItemList.json, which contains the json objects for every item id
 in the guild wars 2 item api endpoint.
 to build the list the first time, update should be set to False. after it's built, set update to True, and it will
 only call the api on ids that are new.
@@ -68,8 +68,7 @@ if update:
         for urlReq in urlReqList:
             newItemList += json.load(urlopen(urlReq))
 
-        # add newItemList to the master list. I guess I could have just added it to the master list directly,
-        # newItemList seems like an extra step.
+        # add newItemList to the master list
         masterItemList += newItemList
 
         # sort the master item list by id using gw2lib.compareByID()

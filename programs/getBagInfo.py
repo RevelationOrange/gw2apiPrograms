@@ -12,7 +12,12 @@ prints the info, but also saves to a csv, where it's much more readable
 # this is the maximum number of bag slots any character can have. currently 8, may change, probly not.
 nSlots = 8
 
-# api key to use is gotten from the command line
+# api key to use is gotten from the command line, or exit if one isn't provided
+if len(sys.argv) < 2:
+    print "No api key provided. Please provide your api key as the first argument. If you need to create one, you can "\
+          "do so at https://account.arena.net/applications"
+    print "Be sure to include the 'character' and 'inventories' permissions for this program to work."
+    sys.exit()
 apiKey = sys.argv[1]
 
 # all character data grabbed

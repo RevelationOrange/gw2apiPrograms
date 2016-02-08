@@ -62,7 +62,12 @@ def makeStats(stats, level):
     stats['Vitality'] = num
     return stats
 
-# grab the api key from the command line
+# grab the api key from the command line, or exit if one isn't provided
+if len(sys.argv) < 2:
+    print "No api key provided. Please provide your api key as the first argument. If you need to create one, you can "\
+          "do so at https://account.arena.net/applications"
+    print "Be sure to include the 'character' and either 'inventories' or 'builds' permissions for this program to work."
+    sys.exit()
 apiKey = sys.argv[1]
 
 # grab character and bank data, and get the MIL

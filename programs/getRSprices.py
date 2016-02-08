@@ -34,10 +34,13 @@ def makeCsvList(prices, containers):
     return csvList
 
 # the runes/sigils to check can be set here, but any provided on the command line will take priority
-rsNames = ['Superior Sigil of Energy']
-# rsNames = []
+#rsNames = ['Superior Sigil of Energy']
+rsNames = []
 if len(sys.argv) > 1:
-    rsNames = sys.argv[1:]
+    if sys.argv[1] == 'all':
+        rsName = []
+    else:
+        rsNames = sys.argv[1:]
 
 # if rsNames is empty, read in all rune/sigil names from file
 if len(rsNames) < 1:

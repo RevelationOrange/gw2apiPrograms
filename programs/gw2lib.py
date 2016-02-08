@@ -1,6 +1,8 @@
 import json
 from urllib2 import urlopen
 import os
+import time
+import codecs
 
 
 '''
@@ -35,9 +37,13 @@ searchFolderName = baseFolder + databaseFolder + 'sigilrune_files' + sep
 rsPricesFolderName = baseFolder + outputFolder + 'rsPrices' + sep
 charactersFolderName = baseFolder + outputFolder
 masterItemFilename = 'masterItemList.json'
+masterItemFilenamev2 = 'masterItemListv2.json'
 masterRecipeFilename = 'masterRecipeList.json'
+masterRecipeFilenamev2 = 'masterRecipeListv2.json'
 newItemsFilename = 'newItems.txt'
-newNamesFilename = 'newNames.txt'
+newINamesFilename = 'newINames.txt'
+newRecipesFilename = 'newRecipes.txt'
+newRNamesFilename = 'newRNames.txt'
 runeAndSigilsFilename = 'runesAndSigils.json'
 
 
@@ -49,10 +55,24 @@ def getMIL():
         theList = json.load(masterItemFile)
     return theList
 
+def getMILv2():
+    # function to easily get the new master item list json
+    # simply loads the master item file and returns it as a json object
+    with open(itemListFolder+masterItemFilenamev2) as masterItemFile:
+        theList = json.load(masterItemFile)
+    return theList
+
 def getMRL():
     # function to easily get the master recipe list json
     # just like getMIL()
     with open(recipeListFolder+masterRecipeFilename) as masterRecipeFile:
+        theList = json.load(masterRecipeFile)
+    return theList
+
+def getMRLv2():
+    # function to easily get the new master recipe list json
+    # just like getMRLv2()
+    with open(recipeListFolder+masterRecipeFilenamev2) as masterRecipeFile:
         theList = json.load(masterRecipeFile)
     return theList
 
@@ -160,15 +180,21 @@ def findByID(id,list):
     else:
         return None
 
-def findByX(val,criteria,dict):
-    # find all item objects by any criteria
+def findByX(val, criteria, container):
+    # find all item/recipe objects by any criteria
     # criteria is a dictionary key, like 'name' or 'id', and val is the value of that key, like 'Salvage Kit' or 47
     # this will only work for keys in the main dictionary; for example it can't search by the key 'type' found in the
     # 'details' object of an object in the given dict
     rList = []
     # in the for loop, each item in dict is checked and if criteria is in the keys and it matches val, it's added
     # to the return list
-    for item in dict:
+    if type(container) is list:
+        objs = container
+    elif type(container) is dict:
+        objs = container.values()
+    else:
+        return None
+    for item in objs:
         if criteria in item.keys():
             if item[criteria] == val:
                 rList.append(item)
@@ -202,3 +228,119 @@ def formatCoins(coins, denom=''):
             number = coins/10000.
             denom = 'gold'
     return [number, denom, str(number) + ' ' + denom]
+
+def makeMILv2():
+    '''
+    makeMILv2 will copy the master item list .json file and turn it into a dict in the form of idNum:itemObject
+    this eliminates the need for searching by id
+    the new MIL will also be modified to include custom flags, most significantly 'TPable', a flag to indicate
+    if the item id is valid for the trading post endpoint
+    '''
+    masterItemList = getMIL()
+    MILv2 = {}
+    for itemObj in masterItemList:
+        MILv2[int(itemObj['id'])] = itemObj
+    with open(itemListFolder+masterItemFilenamev2, 'w') as masterItemFilev2:
+        json.dump(MILv2, masterItemFilev2)
+
+
+def makeMRLv2():
+    '''
+    makeMRLv2 will copy the master recipe list .json file and turn it into a dict in the form of idNum:recipeObject
+    this eliminates the need for searching by id
+    '''
+    masterRecipeList = getMRL()
+    MRLv2 = {}
+    for recObj in masterRecipeList:
+        MRLv2[int(recObj['id'])] = recObj
+    with open(recipeListFolder+masterRecipeFilenamev2, 'w') as masterRecipeFilev2:
+        json.dump(MRLv2, masterRecipeFilev2)
+
+def addTPflag():
+    masterItemListv2 = getMILv2()
+    for itemObj in masterItemListv2.values():
+        itemObj['TPable'] = False
+    with open(itemListFolder+masterItemFilenamev2, 'w') as masterItemFile:
+        json.dump(masterItemListv2, masterItemFile)
+
+def updateTPflag():
+    knownID = 19684
+    knownIDstr = str(knownID)
+    baseReqUrl = apiBase + commercePricesSubsect + idsReq + knownIDstr + ','
+    masterItemListv2 = getMILv2()
+    masterItemListv2[knownIDstr]['TPable'] = True
+    allIDs = masterItemListv2.keys()
+    urlReqList = makeReqUrlList(allIDs, baseReqUrl, 199)[0]
+    idsCheck = []
+    for req in urlReqList:
+        trades = json.load(urlopen(req))
+        ids = [ x['id'] for x in trades ]
+        idsCheck.append(ids)
+        for id in ids:
+            if id != knownID:
+                masterItemListv2[str(id)]['TPable'] = True
+        print 'updated ' + str(len(ids)) + ' ids'
+    with open(itemListFolder+masterItemFilenamev2, 'w') as masterItemFile:
+        json.dump(masterItemListv2, masterItemFile)
+
+def updateMasterList(whichList):
+    # updateMasterList will check for new item or recipe ids from the respective endpoint and add the new ones to the
+    # current dictionary
+
+    # whichList is used to determine the master list to update
+    # for item or recipe, it loads the file, sets the appropriate url, and sets folders and filenames
+    if whichList == 'item':
+        masterList = getMILv2()
+        url = apiBase + itemsSubsect
+        folder = itemListFolder
+        newObjsFilename = newItemsFilename
+        newNamesFilename = newINamesFilename
+        masterFilename = masterItemFilenamev2
+    elif whichList == 'recipe':
+        masterList = getMRLv2()
+        url = apiBase + recipesSubsect
+        folder = recipeListFolder
+        newObjsFilename = newRecipesFilename
+        newNamesFilename = newRNamesFilename
+        masterFilename = masterRecipeFilenamev2
+    # if whichList isn't item or recipe, something is wrong, don't do that
+    else:
+        print whichList, 'is not a valid master list to update, please enter \'item\' or \'recipe\'.'
+        return
+
+    # get the current list of ids from the master list, and all ids from the items/recipes endpoint
+    currentIDs = [ int(x) for x in sorted(masterList.keys()) ]
+    allIDs = json.load(urlopen(url))
+
+    # neither of these are really necessary, just nice to know
+    lastListIndex = len(allIDs)
+    print 'final ' + whichList + ' ID:', allIDs[-1], ', final ' + whichList + ' index:', lastListIndex
+
+    # compare id lists using sets to get the ids that exist in the api but not the in current list
+    newIDs = list(set(allIDs)^set(currentIDs))
+    print 'updating ' + whichList + 's list'
+    if len(newIDs) > 0:
+        # show the new ids to be updated (and how many)
+        print newIDs, '\n', len(newIDs), 'new IDs to update'
+        # make the urls request list, using the appropriate url
+        urlReqList = makeReqUrlList(newIDs, url+idsReq)[0]
+        # show each url req, for... posterity I guess?
+        for x in urlReqList:
+            print x
+        newItemList = []
+        # go through each request url, get the item/recipe list from the api, and add it to the new items/recipes list
+        for req in urlReqList:
+            newItemList += json.load(urlopen(req))
+        # for each new item/recipe, add a dictionary entry to the master list: idNumber:object
+        for item in newItemList:
+            masterList[item['id']] = item
+        # write to separate files: the new object ids, timestamped, the new names, timestamped, and the new master file
+        # the ids and names are .txt files, the master file is a .json
+        with open(folder+newObjsFilename, 'a') as newObjsFile:
+            newObjsFile.write( ','.join(str(x) for x in newIDs ) + '\t' + time.strftime("%c") + '\n' )
+        with codecs.open(folder+newNamesFilename, 'a', 'utf-8') as newNamesFile:
+            newNamesFile.write( ','.join( x['name'] for x in newItemList ) + '\t' + time.strftime("%c") + '\n' )
+        with open(folder+masterFilename, 'w') as masterFile:
+            json.dump(masterList, masterFile)
+    else:
+        print 'oop, no need'

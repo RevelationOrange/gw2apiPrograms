@@ -13,6 +13,7 @@ recipes you know
 '''
 currently: gets a full recipe path with correct counts for each ingredient, adds placeholder buy prices for each item,
 and makes a list of all item ids involved in the recipe
+
 todo: make that id list into a dict that determines what to do with each id (check trade, get the vendor price, etc.)
 get the price of each item on trade, which involves coming up with a way to group ids together in a single request and
 put them back in the right place after
@@ -33,7 +34,7 @@ def chkRec(itemID, count, idsList):
         # go through each ingredient:
         for ingr in trChk:
             # set the buy price to 2 (will change later to actually get the buy price)
-            ingr['buyPrice'] = 2
+            ingr['buyPrice'] = None
             # update the count- multiply the count of the ingredient by the count of the recipe 'above' it
             # this ensures nested recipes have the correct total counts for the ingredients at the bottom
             ingr['count'] *= count
@@ -103,7 +104,7 @@ for recID in recipeList[-100:]:
     trChk['sourceID'] = recObj['output_item_id']
     trChk['idsList'] = [trChk['sourceID']]
     # add a placeholder buy price
-    trChk['buyPrice'] = 2
+    trChk['buyPrice'] = None
     # get the item name
     trChk['name'] = gw2lib.findByID(trChk['sourceID'], masterItemList)['name']
     # deepcopy the ingredients list for this recipe
@@ -111,7 +112,7 @@ for recID in recipeList[-100:]:
     for ingr in trChk['ingredients']:
         # add the name and a placeholder buy price for each ingredient
         ingr['name'] = gw2lib.findByID(ingr['item_id'], masterItemList)['name']
-        ingr['buyPrice'] = 2
+        ingr['buyPrice'] = None
         # and add the id to the ids list
         trChk['idsList'].append(ingr['item_id'])
         # call chkRec to get the same info for each ingredient
@@ -128,9 +129,9 @@ a = {'item_id':46742, 'buyPrice':2, 'ingredients':[{'item_id':19721, 'count':1, 
                                                    ]}
 
 # output the info for some of the recipes to check if it's working
-for x in tradeChecks[-3:]:
+for x in tradeChecks[:]:
     print 'source id: ' + str(x['sourceID']) + ', name: ' + x['name'] + ', buy price: ' + str(x['buyPrice'])
-    print x['idsList']
+    print len(x['idsList']), x['idsList']
     printRecTrail(x['ingredients'])
     print ''
 

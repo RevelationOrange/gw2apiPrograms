@@ -2,25 +2,25 @@ import gw2lib
 import os
 
 
-masterItemList = gw2lib.getMIL()
+'''
+thermocatalytic reagent- 'vendor_vlaue' is 80, but gw2eff says get 50 of them for 74s80c, from a vendor?
+7480/50. = 149.6, soooo... ?
+obsidian shard- 'ascended material', can apparently be bought from a vendor with karma, 2100 per, but there doesn't seem
+to be a way to determine that strictly from the item object. hrm.
+'''
 
-name = 'Assassin\'s Auric Axe'
-idNum = 7000
+masterItemList = gw2lib.getMILv2()
+
+name = 'Obsidian Shard'
+idNum = 19925
 
 nameObj = gw2lib.findByX(name, 'name', masterItemList)
-idNumObj = gw2lib.findByID(idNum, masterItemList)['name']
-print len(nameObj)
+#idNumObj = gw2lib.findByID(idNum, masterItemList)['name']
+idNumObj = masterItemList[str(idNum)]
 
+if len(nameObj) > 1:
+    print 'more than 1 item found for that name, only printing the first'
 print 'id of \'' + name + '\' search:', nameObj[0]['id']
-print 'name of ' + str(idNum)+ ' search:', idNumObj
+print 'name of ' + str(idNum)+ ' search:', idNumObj['name']
 
-print 'line separator:', os.linesep
-print 'name:', os.name
-print 'parent dir string:', os.pardir
-print 'patch sep:', os.pathsep
-print 'path sep:', os.sep
-
-masterRecipeList = gw2lib.getMRL()
-
-recipeObj = gw2lib.findByID(11790, masterRecipeList)
-print recipeObj
+print idNumObj

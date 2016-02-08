@@ -11,3 +11,5 @@ $ python maintenance.py
 
 gw2lib.updateMasterList('item') and gw2lib.updateMasterList('recipe') should be run periodically (recipes much less often I think) to ensure the master lists are up to date.
 and be sure to use buildRSref before using getRSprices if it's been a while.
+
+sorry this is hard to read, for some reason it doesn't like newline characters or something.

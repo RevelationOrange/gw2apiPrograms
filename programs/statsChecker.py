@@ -73,7 +73,7 @@ apiKey = sys.argv[1]
 # grab character and bank data, and get the MIL
 chars = gw2lib.getAllCharacterData(apiKey)
 bank = gw2lib.getBankData(apiKey)
-masterItemList = gw2lib.getMIL()
+masterItemList = gw2lib.getMILv2()
 
 # base stats dictionary, all values zero and an empty equips list
 statsDict = {"Defense":0, "Power":0, "Toughness":0, "Vitality":0, "Precision":0, "CritDamage":0, "ConditionDamage":0,
@@ -93,7 +93,7 @@ for char in chars:
         if piece is not None:
             if piece['slot'] not in noCountSlots:
                 # get the item object
-                itemObj = gw2lib.findByID(piece['id'], masterItemList)
+                itemObj = masterItemList[str(piece['id'])] #gw2lib.findByID(piece['id'], masterItemList)
                 # the back piece check was just to see what the hell was going on with backpack stats
                 # A BUNCH OF GODDAMN NONSENSE, THAT'S WHAT
                 if piece['slot'] == 'Backpack':

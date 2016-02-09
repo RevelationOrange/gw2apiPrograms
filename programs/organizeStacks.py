@@ -41,7 +41,7 @@ def findPartialStacks(bag, locationsDict, curChar, mil):
                 # and it's not bound (account or soul)
                 if 'bound_to' not in item.keys():
                     # get the item object from the master list
-                    itemData = gw2lib.findByID(item['id'], mil)
+                    itemData = mil[str(item['id'])] #gw2lib.findByID(item['id'], mil)
                     if itemData is None:
                         # as above, if it's not found in the master list, it's weird
                         weirdItems.append([item, curChar, i])
@@ -71,7 +71,7 @@ apiKey = sys.argv[1]
 # grab character and bank data, and get the MIL
 chars = gw2lib.getAllCharacterData(apiKey)
 bank = gw2lib.getBankData(apiKey)
-masterItemList = gw2lib.getMIL()
+masterItemList = gw2lib.getMILv2()
 
 stackLocations = {}
 
@@ -93,7 +93,7 @@ for char in chars:
 
 # fill out the names for the items in stackLocations, since the data from characters and banks only includes ids
 for id in stackLocations.keys():
-    itemName = gw2lib.findByID(id, masterItemList)['name']
+    itemName = masterItemList[str(id)]['name'] #gw2lib.findByID(id, masterItemList)['name']
     stackLocations[id]['name'] = itemName
 
 reducedStacks = {}

@@ -41,10 +41,10 @@ bank = gw2lib.getBankData(apiKey)
 
 # start all counts at 0 of course, using a dictionary to organize bags by rarity
 nProfitBags = 0
-bagsByRarity = {'Junk': 0, 'Basic': 0, 'Fine': 0, 'Masterwork': 0, 'Rare': 0, 'Exotic': 0}
+bagsByRarity = {'Junk': 0, 'Basic': 0, 'Fine': 0, 'Masterwork': 0, 'Rare': 0, 'Exotic': 0, 'Ascended':0}
 
 # get master item list
-masterItemList = gw2lib.getMIL()
+masterItemList = gw2lib.getMILv2()
 
 containerIDs = []
 
@@ -53,7 +53,7 @@ containerIDs = []
 # a bag drops random gear (as opposed to special stuff like the black lion chest, or fixed rewards like armor box)
 # simply go through every item in the master list and if it's a container and not one of the restricted names,
 # add its id, rarity, and name to the list
-for x in masterItemList:
+for x in masterItemList.values():
     if x['type'] == 'Container':
         if 'Mists' not in x['name'] and 'Black Lion Chest' not in x['name'] \
                 and 'Transcendent Chest' is not x['name'] and 'Exotic Equipment' not in x['name']\

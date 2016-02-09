@@ -1,5 +1,7 @@
 import gw2lib
 import os
+import time
+import sys
 
 
 '''
@@ -9,18 +11,20 @@ obsidian shard- 'ascended material', can apparently be bought from a vendor with
 to be a way to determine that strictly from the item object. hrm.
 '''
 
-masterItemList = gw2lib.getMILv2()
+MILv2 = gw2lib.getMILv2()
 
-name = 'Obsidian Shard'
-idNum = 19925
+apiKey = sys.argv[1]
+chars = gw2lib.getAllCharacterData(apiKey)
 
-nameObj = gw2lib.findByX(name, 'name', masterItemList)
-#idNumObj = gw2lib.findByID(idNum, masterItemList)['name']
-idNumObj = masterItemList[str(idNum)]
+totalBoxes = 0
+for char in chars:
+    if char['name'] == 'Elle Orange':
+        for bag in char['bags']:
+            if bag is not None:
+                for item in bag['inventory']:
+                    if item is not None:
+                        itemName = MILv2[str(item['id'])]['name']
+                        if itemName != 'Crude Salvage Kit':
+                            totalBoxes += item['count']
 
-if len(nameObj) > 1:
-    print 'more than 1 item found for that name, only printing the first'
-print 'id of \'' + name + '\' search:', nameObj[0]['id']
-print 'name of ' + str(idNum)+ ' search:', idNumObj['name']
-
-print idNumObj
+print totalBoxes

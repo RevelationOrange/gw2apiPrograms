@@ -18,7 +18,7 @@ apiKey = sys.argv[1]
 # grab character and bank data, and get the MIL
 chars = gw2lib.getAllCharacterData(apiKey)
 bank = gw2lib.getBankData(apiKey)
-masterItemList = gw2lib.getMIL()
+masterItemList = gw2lib.getMILv2()
 
 findList = []
 
@@ -47,7 +47,7 @@ allInvys.append(['bank', bank])
 for bag in allInvys:
     for item in bag[1]:
         if item is not None:
-            iName = gw2lib.findByID(item['id'], masterItemList)['name']
+            iName = masterItemList[str(item['id'])] #gw2lib.findByID(item['id'], masterItemList)['name']
             if string.lower(iName) in [string.lower(x) for x in findList]:
                 foundList.append([bag[0], iName])
 

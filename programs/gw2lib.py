@@ -164,7 +164,7 @@ def getContainerLists(masterItemList,rsID):
                     rsItemList.append(x)
     return rsItemList
 
-def findByID(id,list):
+def findByID(id,container):
     '''
     find an item object by its id
     simply loops through the given list (usually the master item list) and returns the object when its id is found.
@@ -175,11 +175,12 @@ def findByID(id,list):
     program calling findByID, which is intentional; this kind of error should never occur in the first place, so it's
     best to know when it happens so more information about the item in question can be obtained
     '''
-    for x in list:
+    for x in container:
         if x['id'] == id:
             return x
     else:
         return None
+
 
 def findByX(val, criteria, container):
     # find all item/recipe objects by any criteria
@@ -351,10 +352,12 @@ def updateMasterList(whichList):
             masterList[item['id']] = item
         # write to separate files: the new object ids, timestamped, the new names, timestamped, and the new master file
         # the ids and names are .txt files, the master file is a .json
+        # names won't be written for recipes
         with open(folder+newIDsFilename, 'a') as newObjsFile:
             newObjsFile.write( ','.join(str(x) for x in newIDs ) + '\t' + time.strftime("%c") + '\n' )
-        with codecs.open(folder+newNamesFilename, 'a', 'utf-8') as newNamesFile:
-            newNamesFile.write( ','.join( x['name'] for x in newItemList ) + '\t' + time.strftime("%c") + '\n' )
+        if whichList != 'recipe':
+            with codecs.open(folder+newNamesFilename, 'a', 'utf-8') as newNamesFile:
+                newNamesFile.write( ','.join( x['name'] for x in newItemList ) + '\t' + time.strftime("%c") + '\n' )
         with open(folder+masterFilename, 'w') as masterFile:
             json.dump(masterList, masterFile)
     else:

@@ -33,7 +33,7 @@ def findEquips(equipSet, char=None, makeBase=True):
             while slot[-1] in '12AB':
                 slot = slot[:-1]
             # grab the item object
-            itemObj = gw2lib.findByID(piece['id'], masterItemList)
+            itemObj = masterItemList[str(piece['id'])] #gw2lib.findByID(piece['id'], masterItemList)
             # use it to get the rarity
             rarity = itemObj['rarity']
             # if the slot has an associated weight class, append that text to it
@@ -85,7 +85,7 @@ def makeInvyDict(bag, loc=None, makeBase=True):
                 # reset the type (this is used to exclude irrelevant item types, as iType is only set when a relevant
                 # type is found), and get the item object
                 iType = None
-                itemObj = gw2lib.findByID(item['id'], masterItemList)
+                itemObj = masterItemList[str(item['id'])] #gw2lib.findByID(item['id'], masterItemList)
                 # and now a separate case for each slot type, because screw uniformity, right?
                 if itemObj['type'] == 'Back':
                     # 'Back' type items should be 'Backpack'

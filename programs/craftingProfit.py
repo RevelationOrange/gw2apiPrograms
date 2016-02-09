@@ -41,7 +41,7 @@ def chkRec(itemID, count, idsList):
             # add the id to the ids list, which for now just tracks every item id involved in the top level recipe
             idsList.append(ingr['item_id'])
             # add the item name
-            ingr['name'] = gw2lib.findByID(ingr['item_id'], masterItemList)['name']
+            ingr['name'] = masterItemList[str(ingr['item_id'])]['name'] #gw2lib.findByID(ingr['item_id'], masterItemList)['name']
             # get the ingredients list (if it exists) for the recipe 'below'
             ingr['ingredients'] = chkRec(ingr['item_id'], ingr['count'], idsList)
         # return the updated ingredients list
@@ -60,7 +60,7 @@ def printRecTrail(ingrs, nTabs=1):
     # go through each ingredient
     for ingr in ingrs:
         # add tabs to visually show what 'level' these ingredients are on, print the item id, name, count, and buy price
-        print '\t'*nTabs + 'item id: ' + str(ingr['item_id']) + ', name: ' + ingr['name'] + ', COUNT: ' +\
+        print '\t'*nTabs + 'item id: ' + str(ingr['item_id']) + ', name: ' + ingr['name'] + ', count: ' +\
               str(ingr['count']) + ', buy price: ' + str(ingr['buyPrice'])
         # if there are any further ingredients, call printRecTrail again to print them
         if ingr['ingredients'] is not None:
@@ -77,8 +77,8 @@ apiKey = sys.argv[1]
 # grab character and bank data, and get the MIL and MRL
 chars = gw2lib.getAllCharacterData(apiKey)
 bank = gw2lib.getBankData(apiKey)
-masterItemList = gw2lib.getMIL()
-masterRecipeList = gw2lib.getMRL()
+masterItemList = gw2lib.getMILv2()
+masterRecipeList = gw2lib.getMRLv2()
 
 # recipe list will be every recipe to check
 recipeList = []
@@ -104,19 +104,19 @@ for recID in recipeList[-100:]:
     # trChk will be the dict added to the tradeChecks list
     trChk = {}
     # get the recipe object for the given id
-    recObj = gw2lib.findByID(recID, masterRecipeList)
+    recObj = masterRecipeList[str(recID)] #gw2lib.findByID(recID, masterRecipeList)
     # add the item id to the dict and the ids list
     trChk['sourceID'] = recObj['output_item_id']
     trChk['idsList'] = [trChk['sourceID']]
     # add a placeholder buy price
     trChk['buyPrice'] = None
     # get the item name
-    trChk['name'] = gw2lib.findByID(trChk['sourceID'], masterItemList)['name']
+    trChk['name'] = masterItemList[str(trChk['sourceID'])]['name'] #gw2lib.findByID(trChk['sourceID'], masterItemList)['name']
     # deepcopy the ingredients list for this recipe
     trChk['ingredients'] = deepcopy( recObj['ingredients'] )
     for ingr in trChk['ingredients']:
         # add the name and a placeholder buy price for each ingredient
-        ingr['name'] = gw2lib.findByID(ingr['item_id'], masterItemList)['name']
+        ingr['name'] = masterItemList[str(ingr['item_id'])]['name'] #gw2lib.findByID(ingr['item_id'], masterItemList)['name']
         ingr['buyPrice'] = None
         # and add the id to the ids list
         trChk['idsList'].append(ingr['item_id'])
@@ -139,6 +139,5 @@ for x in tradeChecks[:]:
     print len(x['idsList']), x['idsList']
     printRecTrail(x['ingredients'])
     print ''
-
 
 print timeEnd-timeStart, 's'

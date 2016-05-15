@@ -146,7 +146,7 @@ apiKey = sys.argv[1]
 # grab character and bank data, and get the MIL
 chars = gw2lib.getAllCharacterData(apiKey)
 bank = gw2lib.getBankData(apiKey)
-masterItemList = gw2lib.getMIL()
+masterItemList = gw2lib.getMILv2()
 
 # baselines is a dictionary of the lowest rarity found on any character for a particular item slot
 # equipment found in inventory must be equal to or rarer than this for it to be a candidate to replace an equip
@@ -241,3 +241,5 @@ with codecs.open(gw2lib.charactersFolderName+invyFileName, 'w', 'utf-8') as invy
             for info in itemsBySlot[slot]:
                 invyFile.write('  ' + ', '.join([ x for x in info ]) + '\n')
             invyFile.write('\n')
+print 'equipment info written to {} and {}'.format(gw2lib.charactersFolderName+charFileName,
+                                                   gw2lib.charactersFolderName+invyFileName)

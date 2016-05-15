@@ -184,3 +184,6 @@ with open(gw2lib.charactersFolderName+stacksByCharacterFilename, 'w') as stacksB
                   + str(stacksByCharacter[charName][itemID]['count']) + '): ' \
                   + ', '.join([ y[1] + ' (' + str(y[0]) + ')' for y in stacksByCharacter[charName][itemID]['locations'] ]) + '\n')
         stacksBCfile.write('\n')
+
+print 'item info written to {} and {}'.format(gw2lib.charactersFolderName+stacksByItemFilename,
+                                              gw2lib.charactersFolderName+stacksByCharacterFilename)

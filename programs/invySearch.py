@@ -28,7 +28,11 @@ with open("finditems.txt", 'r') as listFile:
     for line in listFile:
         findList.append(line[:-1])
 
-#print findList
+# make sure there's at least something in the findList; if not, remind the user of the text file location and exit
+if len(findList) == 0:
+    print 'no item names found in programs/finditems.txt\nto search for items, put each item you\'re looking for ' \
+          'there, each on it\'s own line (capitalization doesn\'t matter, but spelling and punctuation do)'
+    sys.exit()
 foundList = []
 
 allInvys = []
@@ -47,10 +51,12 @@ allInvys.append(['bank', bank])
 for bag in allInvys:
     for item in bag[1]:
         if item is not None:
-            iName = masterItemList[str(item['id'])] #gw2lib.findByID(item['id'], masterItemList)['name']
+            iName = masterItemList[str(item['id'])]['name'] #gw2lib.findByID(item['id'], masterItemList)['name']
             if string.lower(iName) in [string.lower(x) for x in findList]:
                 foundList.append([bag[0], iName])
 
 # print what you found
-for x in foundList:
-    print x[1] + " - found on " + x[0]
+if len(foundList) > 0:
+    for x in foundList:
+        print x[1] + " - found on " + x[0]
+else: print 'none of the listed items found anywhere'

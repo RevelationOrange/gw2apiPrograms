@@ -1,0 +1,38 @@
+iron axe blade
+bronze dagger hilt
+small soft haft
+small green haft
+large seasoned haft
+steel shield backing
+steel shield boss
+bronze plated dowel
+green wood dowel
+seasoned wood dowel
+soft wood dowel
+might green inscription
+mighty bronze plated inscription
+strong seasoned inscription
+honed steel plated inscription
+honed seasoned inscription
+vital green inscription
+resilient green inscription
+hunter's seasoned inscription
+healing green inscription
+strong iron plated inscription
+honed iron plated inscription
+strong soft inscription
+hearty soft inscription
+honed soft inscription
+hearty seasoned inscription
+ravaging steel plated inscription
+hunter's steel plated inscription
+vigorous steel plated inscription
+carrion darksteel plated inscription
+berserker's darksteel plated inscription
+rampager's hard inscription
+healing bronze plated inscription
+assassin's hard inscription
+rejuvenating soft inscription
+giver's green inscription
+giver's steel-plated inscription
+
